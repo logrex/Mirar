@@ -17,6 +17,8 @@ import * as todoController from './controllers/todo.server.controller';
 // define our app using express
 const app = express();
 
+const server = http.Server(app);
+const io = socket(server);
 // allow-cors
 app.use(function(req, res, next) {
     res.header('Access-Control-Allow-Origin', '*');
@@ -64,9 +66,9 @@ const port = process.env.PORT || 3001;
 
 // connect to database
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost/mern-todo-app', {
-  useMongoClient: true,
-});
+// mongoose.connect('mongodb://localhost/mern-todo-app', {
+//   useMongoClient: true,
+// });
 
 // add Source Map Support
 SourceMapSupport.install();
