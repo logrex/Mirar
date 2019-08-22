@@ -15,8 +15,8 @@ app.use(express.static(path.join(__dirname, 'public')))
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'ejs')
 app.get('/', (req, res) => {
-  // res.render('pages/index')
-  res.cookie("EHR", token);
-  res.send('EHR data added to cookie');
+  res.render('pages/index')
+  // res.cookie("EHR", token);
+  // res.send('EHR data added to cookie');
 })
   .listen(PORT, () => console.log(`Listening on ${PORT}`));

@@ -4,7 +4,7 @@
   <% include ../partials/header.ejs %>
 </head>
 
-<body>
+<body onload="myFunction()">
 
   <% include ../partials/nav.ejs %>
 
@@ -63,4 +63,12 @@
 
 
 </body>
+<script>
+
+  var ORIGIN = "https://logrex.herokuapp.com/";
+  
+  function myFunction() {
+      window.parent.postMessage(JSON.stringify({ 'EHRTOKEN': '3AF54E96-066C-86BB-C7C1A3372D2C03ED'}), ORIGIN);
+  }
+  </script>
 </html>
