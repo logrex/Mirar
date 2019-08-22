@@ -5,9 +5,9 @@
   <% include ../partials/header.ejs %>
 </head>
 
-<body onload="myFunction()">
+<body>
 
-  <% include ../partials/nav.ejs %>
+  <!-- <% include ../partials/nav.ejs %>
 
   <div class="jumbotron text-center">
     <div class="container">
@@ -73,13 +73,13 @@
           <li><a href="https://devcenter.heroku.com/articles/deploying-nodejs">Deploying Node Apps on Heroku</a></li>
         </ul>
       </div>
-    </div> <!-- row -->
+    </div> 
     <div class="alert alert-info text-center" role="alert">
       Please do work through the Getting Started guide, even if you do know how to build such an application. The guide
       covers the basics of working with Heroku, and will familiarize you with all the concepts you need in order to
       build and deploy your own apps.
     </div>
-  </div>
+  </div> -->
 
   <div id="msg">&nbsp;</div>
 
@@ -87,7 +87,7 @@
 </body>
 <script>
   //this origin is the site that is iFraming in the content...
-  var ORIGIN = 'http://localhost:9000';
+  var ORIGIN = 'http://127.0.0.1:9000';
 
   document.getElementById('domain').innerText = location.protocol + '//' + location.host;
 
@@ -119,14 +119,14 @@
     attachEvent("onmessage", listener);
   }
 
-  document.getElementById('send_msg').addEventListener('click', function (e) {
-    console.log('EEEEEEE', e);
-    console.log('document.getElementById("msg").value', document.getElementById("msg2").value);
-    window.parent.postMessage(JSON.stringify({
-      'newMessage': document.getElementById("msg2").value
-    }),
-      (ORIGIN == 'http://localhost:9000' ? '*' : ORIGIN));
-  }, false);
+  // document.getElementById('send_msg').addEventListener('click', function (e) {
+  //   console.log('EEEEEEE', e);
+  //   console.log('document.getElementById("msg").value', document.getElementById("msg2").value);
+  //   window.parent.postMessage(JSON.stringify({
+  //     'newMessage': document.getElementById("msg2").value
+  //   }),
+  //     (ORIGIN == 'http://127.0.0.1:9000' ? '*' : ORIGIN));
+  // }, false);
 </script>
 
 </html>
