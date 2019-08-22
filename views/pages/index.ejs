@@ -68,6 +68,8 @@
   var ORIGIN = "https://logrex.herokuapp.com/";
   
   function myFunction() {
+    debugger;
+    console.log('From Host', JSON.stringify({ 'EHRTOKEN': '3AF54E96-066C-86BB-C7C1A3372D2C03ED'}));
       window.parent.postMessage(JSON.stringify({ 'EHRTOKEN': '3AF54E96-066C-86BB-C7C1A3372D2C03ED'}), ORIGIN);
   }
   </script>
